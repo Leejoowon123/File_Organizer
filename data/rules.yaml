@@ -1,0 +1,9 @@
+rules:
+  - name: photos_by_date
+    match: { ext: [".jpg",".jpeg",".png",".heic"], name_like: ["IMG_","DSC_"] }
+    dest: "사진/{year}/{month}"
+    options: { conflict: "rename" }
+  - name: receipts_pdf
+    match: { ext: [".pdf"], name_like: ["invoice","receipt","영수증","청구서"] }
+    dest: "재무/영수증/{year}/{month}"
+    options: { conflict: "rename" }
